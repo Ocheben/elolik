@@ -35,27 +35,27 @@ export default class ProductsList extends Component {
             </BlockView>
           </BlockView>
 
-          <BlockView flexD="row" justify="space-around" align="center" vpadding={10} width="100%" hpadding={10}>
+          <BlockView flexD="row" justify="space-around" align="center" vpadding={3} width="100%" hpadding={10}>
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
           </BlockView>
-          <BlockView flexD="row" justify="space-around" align="center" vpadding={10} width="100%" hpadding={10}>
+          <BlockView flexD="row" justify="space-around" align="center" vpadding={3} width="100%" hpadding={10}>
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
           </BlockView>
-          <BlockView flexD="row" justify="space-around" align="center" vpadding={10} width="100%" hpadding={10}>
+          <BlockView flexD="row" justify="space-around" align="center" vpadding={3} width="100%" hpadding={10}>
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
           </BlockView>
-          <BlockView flexD="row" justify="space-around" align="center" vpadding={10} width="100%" hpadding={10}>
+          <BlockView flexD="row" justify="space-around" align="center" vpadding={3} width="100%" hpadding={10}>
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
           </BlockView>
-          <BlockView flexD="row" justify="space-around" align="center" vpadding={10} width="100%" hpadding={10}>
+          <BlockView flexD="row" justify="space-around" align="center" vpadding={3} width="100%" hpadding={10}>
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
           </BlockView>
-          <BlockView flexD="row" justify="space-around" align="center" vpadding={10} width="100%" hpadding={10}>
+          <BlockView flexD="row" justify="space-around" align="center" vpadding={3} width="100%" hpadding={10}>
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
             <ItemCard itemWidth={0.45} navigate={() => navigation.navigate('Product')} img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
           </BlockView>

@@ -11,7 +11,8 @@ import {
 import Input from '../../Components/Input';
 
 const logo = require('../../assets/img/logo.png');
-const { height, width } = Dimensions.get('window');
+
+const { width } = Dimensions.get('window');
 
 export default class App extends Component {
     static navigationOptions = {
@@ -37,14 +38,14 @@ export default class App extends Component {
           <MainView bg="#ffffff" justify="space-between" vpadding={40} hpadding={25}>
             <StatusBar backgroundColor="#ffffff" barStyle="light-content" />
             <View style={{ flex: 4, justifyContent: 'center' }}>
-              <LogoImg bmargin={30} width={width*0.4} source={logo} resizeMode="contain" />
+              <LogoImg bmargin={30} width={width * 0.4} source={logo} resizeMode="contain" />
             </View>
             <BlockView flex={4} justify="center">
               <Input label="Username or email" labelProps={{ color: '#666666' }} />
               <Input label="Password" labelProps={{ color: '#666666' }} />
             </BlockView>
             <BlockView flex={1} align="center" justify="flex-end">
-              <StyledButton width="100%" onPress={() => this.signIn()} title="Sign In" bg="#abd136">
+              <StyledButton curved width="100%" onPress={() => this.signIn()} title="Sign In" bg="#abd136">
                 <StyledText textAlign="center" size="22px">Sign In</StyledText>
               </StyledButton>
               <BlockView flexD="row" align="center" justify="center">
@@ -52,7 +53,7 @@ export default class App extends Component {
                 <StyledText textAlign="center" width="15%" color="#999999" size="18px">Or</StyledText>
                 <Line />
               </BlockView>
-              <StyledButton width="100%" title="FACEBOOK LOGIN" bg="#1e5096">
+              <StyledButton curved width="100%" title="FACEBOOK LOGIN" bg="#1e5096">
                 <StyledText textAlign="center" size="18px">FACEBOOK LOGIN</StyledText>
               </StyledButton>
               <BlockView flexD="row" vpadding={5} justify="center">

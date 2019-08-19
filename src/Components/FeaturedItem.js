@@ -6,6 +6,7 @@ import {
 import {
   StyledText, GradientView, BlockView, Card, CategoryCard
 } from './styledComponents';
+import { GoldStar, NoStar } from './icons';
 
 const { height, width } = Dimensions.get('window');
 export const FeaturedItem = (props) => {
@@ -32,7 +33,12 @@ export const ItemCard = (props) => {
   } = props;
   return (
     <TouchableOpacity style={{ marginLeft: 0, marginRight: 0 }} onPress={navigate}>
-      <Card height={height * 0.45} width={width * (itemWidth || 0.4)} br={3} rmargin={rmargin ? 10 : 0}>
+      <Card
+        height={height * 0.45}
+        width={width * (itemWidth || 0.4)}
+        br={3}
+        rmargin={rmargin ? 10 : 0}
+      >
         <Image source={img} resizeMode="cover" style={{ width: '100%', height: '70%' }} />
         <BlockView hpadding={8} vpadding={8} justify="space-between">
           <StyledText color="#333333" size="17px">{desc}</StyledText>
@@ -61,5 +67,18 @@ export const CategoryItem = (props) => {
         </GradientView>
       </CategoryCard>
     </TouchableOpacity>
+  );
+};
+
+export const Rating = (props) => {
+  const { size } = props;
+  return (
+    <View style={{ flexDirection: 'row' }}>
+      <GoldStar size={size} />
+      <GoldStar size={size} />
+      <GoldStar size={size} />
+      <GoldStar size={size} />
+      <NoStar size={size - 2} />
+    </View>
   );
 };

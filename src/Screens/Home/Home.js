@@ -19,13 +19,14 @@ signOut = () => {
 }
 
 render() {
+  const { navigation } = this.props;
   return (
     <ScrollView>
       <FeaturedItem img={img} />
       <MainView justify="space-between" vpadding={40} hpadding={17} align="flex-start" bg="#f9fafd">
         <StyledText color="#333333" size="17px" textAlign="left" fontWeight="900">Featured Deals</StyledText>
         <ScrollView horizontal contentContainerStyle={{ paddingTop: 10, paddingBottom: 10, alignContent: 'space-between'}}>
-          <ItemCard rmargin img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
+          <ItemCard rmargin img={img} navigate={() => navigation.navigate('Product')} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
           <ItemCard rmargin img={img} desc="Variable product example" oldPrice="N5,000.00" newPrice="N500.00" />
           <ItemCard rmargin img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />
           <ItemCard rmargin img={img} desc="Coupon product with print function" oldPrice="N5,000.00" newPrice="N500.00" />

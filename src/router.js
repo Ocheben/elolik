@@ -12,6 +12,7 @@ import Otp from './Screens/AuthScreens/Otp';
 import Categories from './Screens/Categories/Categories';
 import ProductsList from './Screens/ProductsList/ProductsList';
 import Product from './Screens/Product/Product';
+import Cart from './Screens/Cart/Cart';
 import { LogoImg, BlockView } from './Components/styledComponents';
 import {
   BackArrow, HomeIcon, GridIcon, SearchIcon, CartIcon, AvatarIcon, MenuIcon,
@@ -79,6 +80,15 @@ const CategoryStack = createStackNavigator({
   }
 });
 
+const CartStack = createStackNavigator({
+  Cart: {
+    screen: Cart,
+    navigationOptions: {
+      header: null
+    }
+  }
+});
+
 const HomeScreen = createBottomTabNavigator({
   Home: {
     screen: HomeStack,
@@ -104,8 +114,8 @@ const HomeScreen = createBottomTabNavigator({
       ),
     }
   },
-  Bidsc: {
-    screen: Bids,
+  Cart: {
+    screen: CartStack,
     navigationOptions: {
       tabBarIcon: (
         <CartIcon color="#abd136" size={20} />

@@ -39,10 +39,13 @@ export const GradientView = styled(LinearGradient)`
     padding-bottom: ${props => (props.vpadding ? props.vpadding : 10)};
     padding-left: ${props => (props.hpadding ? props.hpadding : 10)};
     padding-right: ${props => (props.hpadding ? props.hpadding : 10)};
+    margin-top: ${props => (props.vmargin ? props.vmargin : 0)};
+    margin-bottom: ${props => (props.vmargin ? props.vmargin : 0)};
+    margin-left: ${props => (props.hmargin ? props.hmargin : 0)};
+    margin-right: ${props => (props.rmargin ? props.rmargin : 0)};
 `;
 
-export const Card = styled.View`
-    flex:1;
+export const ModalCard = styled.View`
     elevation: 5;
     background-color: ${props => (props.bg ? props.bg : '#ffffff')};
     justify-content: ${props => (props.justify ? props.justify : 'flex-start')};
@@ -54,11 +57,16 @@ export const Card = styled.View`
     padding-left: ${props => (props.hpadding ? props.hpadding : 0)};
     padding-right: ${props => (props.hpadding ? props.hpadding : 0)};
     margin-top: ${props => (props.vmargin ? props.vmargin : 0)};
-    margin-bottom: ${props => (props.vmargin ? props.vmargin : 0)};
+    margin-bottom: ${props => (props.vmargin ? props.vmargin : 10)};
     margin-left: ${props => (props.hmargin ? props.hmargin : 0)};
     margin-right: ${props => (props.rmargin ? props.rmargin : 0)};
     border-radius: ${props => (props.br ? props.br : 0)}
 `;
+
+export const Card = styled(ModalCard)`
+    flex:${props => (props.flex || 1)};
+`;
+
 export const Line = styled.View`
     background-color: ${props => (props.bg ? props.bg : '#999999')};
     height: ${props => (props.height ? props.height : 1.5)};
@@ -116,12 +124,12 @@ export const CircleButton = styled.TouchableOpacity`
 `;
 
 export const StyledButton = styled.TouchableOpacity`
-    border: 2px solid #ffffff;
-    border-radius: 10;
+    /* border: 2px solid #ffffff; */
+    border-radius: ${props => (props.curved ? 10 : 0)};
     width: ${props => (props.width ? props.width : '80%')};
     /* position: absolute;
     bottom: 50; */
-    height: 60;
+    height: ${props => (props.height || 60)};
     background-color: ${props => (props.bg ? props.bg : 'transparent')};
     justify-content: center;
     align-items: center;
@@ -139,4 +147,5 @@ export const CategoryCard = styled.ImageBackground`
     width: ${props => (props.width ? props.width : 50)};
     margin-top: ${props => (props.vmargin ? props.vmargin : 0)};
     margin-bottom: ${props => (props.vmargin ? props.vmargin : 0)};
+    elevation: 5;
 `;

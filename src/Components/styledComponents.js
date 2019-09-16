@@ -73,6 +73,11 @@ export const Line = styled.View`
     width: ${props => (props.width ? props.width : '40%')};
     margin-top: 10;
     margin-bottom: 10;
+    border-width: ${props => (props.connector ? 1 : 0)};
+    border-top-color: ${props => (props.border || '#999999')};
+    border-bottom-color: ${props => (props.border || '#999999')};
+    border-left-color: ${props => (props.connector ? '#ffffff' : '#999999')};
+    border-right-color: ${props => (props.connector ? '#ffffff' : '#999999')};
 `;
 export const StyledInput = styled.TextInput`
     border: ${props => (props.noBorder ? 'none' : '1px solid #000000')};
@@ -125,7 +130,7 @@ export const CircleButton = styled.TouchableOpacity`
 
 export const StyledButton = styled.TouchableOpacity`
     /* border: 2px solid #ffffff; */
-    border-radius: ${props => (props.curved ? 10 : 0)};
+    border-radius: ${props => (props.borderR || props.curved ? 10 : 0)};
     width: ${props => (props.width ? props.width : '80%')};
     /* position: absolute;
     bottom: 50; */
@@ -148,4 +153,15 @@ export const CategoryCard = styled.ImageBackground`
     margin-top: ${props => (props.vmargin ? props.vmargin : 0)};
     margin-bottom: ${props => (props.vmargin ? props.vmargin : 0)};
     elevation: 5;
+`;
+
+export const Circle = styled.View`
+    background: ${props => (props.bg || '#ffffff')};
+    border-radius: ${props => (props.borderR || 10)};
+    border-color: ${props => (props.borderC || '#ffffff')};
+    border-width: ${props => (props.borderW || 1)};
+    width: ${props => (props.width || '15px')};
+    height: ${props => (props.height || '15px')};
+    justify-content: ${props => props.justify || 'center'};
+    align-items: ${props => props.align || 'center'};
 `;

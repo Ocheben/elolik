@@ -4,9 +4,9 @@ import {
   View, ImageBackground, Dimensions, Image, TouchableOpacity,
 } from 'react-native';
 import {
-  StyledText, GradientView, BlockView, Card, CategoryCard
+  StyledText, GradientView, BlockView, Card, CategoryCard, Line
 } from './styledComponents';
-import { GoldStar, NoStar } from './icons';
+import { GoldStar, NoStar, CartIcon } from './icons';
 
 const { height, width } = Dimensions.get('window');
 export const FeaturedItem = (props) => {

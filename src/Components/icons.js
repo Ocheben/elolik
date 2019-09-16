@@ -558,3 +558,100 @@ export const CloseIcon = (props) => {
     </View>
   );
 };
+
+export const LocationIcon = (props) => {
+  const {
+    style, color, size, hmargin
+  } = props;
+  return (
+    <View style={{ marginLeft: hmargin || 0, marginRight: hmargin || 0 }}>
+      <Svg
+        version="1.1"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        viewBox="0 0 33.205 33.205"
+        style={style}
+        fill={color}
+        width={size || 30}
+        height={size || 30}
+      >
+        <G>
+          <Path d="M16.603,17.908c-3.131,0-5.679-2.548-5.679-5.68s2.547-5.68,5.679-5.68s5.679,2.548,5.679,5.68
+     S19.734,17.908,16.603,17.908z M16.603,7.549c-2.58,0-4.679,2.099-4.679,4.68s2.099,4.68,4.679,4.68s4.679-2.099,4.679-4.68
+     S19.183,7.549,16.603,7.549z"
+          />
+          <G>
+            <Path d="M16.603,33.205c-0.148,0-0.288-0.065-0.383-0.179C15.736,32.449,4.376,18.811,4.376,12.229C4.376,5.486,9.861,0,16.603,0
+       s12.227,5.486,12.227,12.229c0,6.583-11.36,20.22-11.843,20.798C16.891,33.14,16.75,33.205,16.603,33.205z M16.603,1
+       C10.412,1,5.376,6.037,5.376,12.229c0,5.571,9.216,17.215,11.227,19.688c2.01-2.474,11.227-14.118,11.227-19.688
+       C27.829,6.037,22.793,1,16.603,1z"
+            />
+          </G>
+        </G>
+      </Svg>
+    </View>
+  );
+};
+
+export const NairaIcon = (props) => {
+  const {
+    style, color, size, hmargin
+  } = props;
+  return (
+    <View style={{ marginLeft: hmargin || 0, marginRight: hmargin || 0 }}>
+      <Svg
+        version="1.1"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        viewBox="0 0 64 64"
+        style={style}
+        fill={color}
+        width={size || 30}
+        height={size || 30}
+      >
+        <G>
+          <Path d="M47.3,9.3h-2.9v17.1H31.6L22.4,9.3h-3.7v17.1H13v2.9h5.7V35H13v2.9h5.7V55h2.9V37.9h12.9L43.6,55h3.7V37.9H53V35h-5.7v-5.7
+        H53v-2.9h-5.7V9.3z M21.6,13.7l6.7,12.7h-6.7V13.7z M21.6,35v-5.7h8.3l3,5.7H21.6z M44.4,50.6l-6.7-12.7h6.7V50.6z M44.4,35h-8.3
+        l-3-5.7h11.3V35z"
+          />
+        </G>
+      </Svg>
+
+    </View>
+  );
+};
+
+export const FlagIcon = (props) => {
+  const {
+    style, color, size, hmargin
+  } = props;
+  return (
+    <View style={{ marginLeft: hmargin || 0, marginRight: hmargin || 0 }}>
+      <Svg
+        version="1.1"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        viewBox="0 0 60 60"
+        style={style}
+        fill={color}
+        width={size || 30}
+        height={size || 30}
+      >
+        <Path d="M46.714,25l10.61-15.434c0.21-0.306,0.233-0.703,0.061-1.032C57.212,8.206,56.871,8,56.5,8h-30V4c0-0.553-0.447-1-1-1h-21V1
+   c0-0.553-0.447-1-1-1s-1,0.447-1,1v3v29v26c0,0.553,0.447,1,1,1s1-0.447,1-1V34h11.026c-0.635,0.838-1.026,1.87-1.026,3
+   c0,2.757,2.243,5,5,5h37c0.371,0,0.712-0.206,0.885-0.534c0.173-0.329,0.149-0.727-0.061-1.032L46.714,25z M4.5,5h20v4v23h-5h-15V5z
+    M19.5,40c-1.654,0-3-1.346-3-3s1.346-3,3-3h6c0.553,0,1-0.447,1-1V10h28.099l-9.923,14.434c-0.234,0.341-0.234,0.792,0,1.133
+   L54.599,40H19.5z"
+        />
+      </Svg>
+
+
+    </View>
+  );
+};

@@ -1,40 +1,39 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { Dimensions, View } from 'react-native';
 import {
-  StyleSheet, Text, View, Button
-} from 'react-native';
-import { onSignOut } from '../../../_services';
+ MainView, BlockView, StyledText, StyledButton, Circle 
+} from '../../Components';
 
-export default class App extends Component {
-  signOut = () => {
-    const { navigation } = this.props;
-    onSignOut().then(() => navigation.navigate('SignedOut'));
-  }
+const { height, width } = Dimensions.get('window');
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Bids Page!</Text>
-        <Button onPress={() => this.signOut()} title="Sign Out" />
-      </View>
-    );
-  }
-}
+const Bids = () => (
+  <MainView>
+    <BlockView bg="#f58521" align="center" justify="center" height={height / 2}>
+      <View style={{
+        backgroundColor: '#ffffff',
+        borderRadius: width / 12,
+        borderColor: '#ffffff',
+        borderWidth: 1,
+        width: width / 6,
+        height: width / 6,
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+      />
+      <StyledText fontWeight="400" color="#ffffff">Godfrey</StyledText>
+      <StyledText fontWeight="400" color="#333333" size="30px">Bid Credit Bal.</StyledText>
+      <StyledText fontWeight="900" color="#ffffff" size="70px">N287</StyledText>
+      <StyledButton borderR={5} width="40%" bg="#ffff">
+        <StyledText fontWeight="400" color="#f58521" size="18px">Add Fund</StyledText>
+      </StyledButton>
+    </BlockView>
+    <BlockView bg="#ffffff" height={height / 2}>
+      <BlockView flexD="row" justify="space-around">
+        <Circle bg="#ffffff" borderR={width / 8} width={width / 4} borderW={4} height={width / 4} borderC="#f58521" />
+        <Circle bg="#ffffff" borderR={width / 8} width={width / 4} borderW={4} height={width / 4} borderC="#f58521" />
+      </BlockView>
+    </BlockView>
+  </MainView>
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+export default Bids;

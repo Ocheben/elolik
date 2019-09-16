@@ -22,3 +22,7 @@ To emulate on iOS device go to the root directory and run:
 Username: ``
 
 Password: ``
+
+## Latest Branch
+
+### `feature/profile`

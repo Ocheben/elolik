@@ -19,9 +19,9 @@ To emulate on iOS device go to the root directory and run:
 
 ## Credentials
 
-Username: ``
+Username: ` `
 
-Password: ``
+Password: ` `
 
 ## Latest Branch
 

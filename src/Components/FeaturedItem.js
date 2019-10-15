@@ -29,12 +29,12 @@ export const FeaturedItem = (props) => {
 
 export const ItemCard = (props) => {
   const {
-    img, desc, newPrice, oldPrice, navigate, itemWidth, rmargin
+    img, desc, newPrice, oldPrice, navigate, itemWidth, itemHeight, rmargin
   } = props;
   return (
     <TouchableOpacity style={{ marginLeft: 0, marginRight: 0 }} onPress={navigate}>
       <Card
-        height={height * 0.45}
+        height={height * (itemHeight || 0.4)}
         width={width * (itemWidth || 0.4)}
         br={3}
         rmargin={rmargin ? 10 : 0}
@@ -71,14 +71,14 @@ export const CategoryItem = (props) => {
 };
 
 export const Rating = (props) => {
-  const { size } = props;
+  const { size, rating } = props;
   return (
     <View style={{ flexDirection: 'row' }}>
-      <GoldStar size={size} />
-      <GoldStar size={size} />
-      <GoldStar size={size} />
-      <GoldStar size={size} />
-      <NoStar size={size - 2} />
+      { rating >= 1 ? <GoldStar size={size} /> : <NoStar size={size - 2} />}
+      { rating >= 2 ? <GoldStar size={size} /> : <NoStar size={size - 2} />}
+      { rating >= 3 ? <GoldStar size={size} /> : <NoStar size={size - 2} />}
+      { rating >= 4 ? <GoldStar size={size} /> : <NoStar size={size - 2} />}
+      { rating >= 5 ? <GoldStar size={size} /> : <NoStar size={size - 2} />}
     </View>
   );
 };

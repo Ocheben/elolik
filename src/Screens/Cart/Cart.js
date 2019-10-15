@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { Dimensions } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Dimensions, View  } from 'react-native';
 import { Tabs, Tab, TabHeading } from 'native-base';
-import { StyledText, StyledButton } from '../../Components/styledComponents';
+import { StyledText, StyledButton, BlockView } from '../../Components/styledComponents';
 import { TabIcon, CartIcon } from '../../Components';
+import CartItems from './CartItems';
+
 
 const { height, width } = Dimensions.get('window');
 
@@ -11,8 +13,16 @@ const Cart = () => {
   return (
     <Tabs page={currentPage} tabBarUnderlineStyle={{ backgroundColor: '#ffffff' }} tabContainerStyle={{ height: height / 8, backgroundColor: '#ffffff' }}>
       <Tab heading={<TabHeading icon={CartIcon} style={{ backgroundColor: '#ffffff', justifyContent: 'flex-start', marginLeft: width / 10 }}><TabIcon title="Cart" active={currentPage === 0} completed={currentPage > 0} /></TabHeading>}>
-        <StyledText color="#000000">This is Tab {currentPage}</StyledText>
-        <StyledButton bg="red" onPress={() => setcurrentPage(1)}><StyledText>Next</StyledText></StyledButton>
+        <CartItems />
+        <View style={{
+          flexDirection: 'row',
+          justifyContent: 'flex-end'
+        }}
+        >
+          <StyledButton width="50%" height={height / 15} bg="#abd136" onPress={() => setcurrentPage(1)}>
+            <StyledText size={width / 20} fontWeight="500">Next Step</StyledText>
+          </StyledButton>
+        </View>
       </Tab>
       <Tab heading={<TabHeading style={{ backgroundColor: '#ffffff', justifyContent: 'flex-start' }}><TabIcon title="Delivery" active={currentPage === 1} completed={currentPage > 1} /></TabHeading>}>
         <StyledText color="#000000">This is Tab {currentPage}</StyledText>

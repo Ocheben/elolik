@@ -3,6 +3,7 @@ import { Dimensions } from 'react-native';
 import {
   createStackNavigator, createDrawerNavigator, createSwitchNavigator, createAppContainer, createBottomTabNavigator
 } from 'react-navigation';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import SignUp from './Screens/AuthScreens/SignUp';
 import Home from './Screens/Home/Home';
 import Bids from './Screens/Bids/Bids';
@@ -17,6 +18,8 @@ import { LogoImg, BlockView } from './Components/styledComponents';
 import {
   BackArrow, HomeIcon, GridIcon, SearchIcon, CartIcon, AvatarIcon, MenuIcon,
 } from './Components/icons';
+import Sidebar from './Components/Sidebar';
+
 
 const logo = require('./assets/img/logo.png');
 
@@ -47,30 +50,34 @@ export const SignedOut = createStackNavigator({
 const HomeStack = createStackNavigator({
   HomeScreen: {
     screen: Home,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       headerTitle: (
         <BlockView justify="space-between" hpadding={12} align="center" flexD="row">
-          <MenuIcon color="#abd136" size={20} />
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <MenuIcon color="#abd136" size={20} />
+          </TouchableOpacity>
           <LogoImg source={logo} width={width * 0.3} resizeMode="contain" />
           <GridIcon color="#abd136" size={20} />
         </BlockView>
       )
-    }
+    })
   }
 });
 
 const CategoryStack = createStackNavigator({
   Categories: {
     screen: Categories,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       headerTitle: (
         <BlockView justify="space-between" hpadding={12} align="center" flexD="row">
-          <MenuIcon color="#abd136" size={20} />
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <MenuIcon color="#abd136" size={20} />
+          </TouchableOpacity>
           <LogoImg source={logo} width={width * 0.3} resizeMode="contain" />
           <GridIcon color="#abd136" size={20} />
         </BlockView>
       )
-    }
+    })
   },
   ProductsList: {
     screen: ProductsList,
@@ -138,15 +145,17 @@ const HomeScreen = createBottomTabNavigator({
 export const SignedIn = createDrawerNavigator({
   Home: {
     screen: HomeScreen,
-    navigationOptions: {
+    navigationOptions: ({ navigation }) => ({
       headerTitle: (
         <BlockView justify="space-between" hpadding={12} align="center" flexD="row">
-          <MenuIcon color="#abd136" size={20} />
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <MenuIcon color="#abd136" size={20} />
+          </TouchableOpacity>
           <LogoImg source={logo} width={width * 0.3} resizeMode="contain" />
           <GridIcon color="#abd136" size={20} />
         </BlockView>
       )
-    }
+    })
   },
   Bids: {
     screen: Bids,
@@ -154,6 +163,9 @@ export const SignedIn = createDrawerNavigator({
       title: 'Bids'
     }
   }
+}, {
+  contentComponent: Sidebar,
+  drawerWidth: 300
 });
 
 export const createRootNavigator = (signedIn = false) => createAppContainer(createSwitchNavigator(

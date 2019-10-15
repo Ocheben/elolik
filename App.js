@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { Root } from 'native-base';
 import { createRootNavigator } from './src/router';
 import { isSignedIn } from './_services'
 
@@ -35,7 +36,7 @@ export default class App extends Component {
   checkSignIn = () => {
     isSignedIn()
       .then(res => this.setState({ signedIn: res, checkedSignIn: true }))
-      .catch(err => alert("An error occurred"));
+      .catch(err => alert('An error occurred'));
   }
   render() {
     const { checkedSignIn, signedIn } = this.state;
@@ -44,7 +45,11 @@ export default class App extends Component {
     }
 
     const Layout = createRootNavigator(signedIn);
-    return <Layout />;
+    return (
+      <Root>
+        <Layout />
+      </Root>
+    );
   }
 }
 

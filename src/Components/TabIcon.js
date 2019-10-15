@@ -25,7 +25,7 @@ const TabIcon = (props) => {
           backgroundColor: '#ffffff',
           borderRadius: width / 16,
           borderColor: completed ? '#abd136' : '#b6b6b6',
-          borderWidth: 1,
+          borderWidth: 2,
           width: width / 8,
           height: width / 8,
           justifyContent: 'center',
@@ -37,7 +37,7 @@ const TabIcon = (props) => {
             borderRadius: width / 20,
             // eslint-disable-next-line no-nested-ternary
             borderColor: completed ? '#abd136' : active ? '#f58521' : '#b6b6b6',
-            borderWidth: 1,
+            borderWidth: 2,
             width: width / 10,
             height: width / 10,
             justifyContent: 'center',

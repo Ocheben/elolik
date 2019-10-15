@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export const MainView = styled.View`
     background-color: ${props => (props.bg ? props.bg : '#ffffff')};
@@ -25,7 +26,10 @@ export const BlockView = styled.View`
     padding-bottom: ${props => (props.vpadding ? props.vpadding : 0)};
     padding-left: ${props => (props.hpadding ? props.hpadding : 0)};
     padding-right: ${props => (props.hpadding ? props.hpadding : 0)};
-    
+    margin-top: ${props => (props.tmargin || props.vmargin || 0)};
+    margin-bottom: ${props => (props.bmargin || props.vmargin || 0)};
+    margin-left: ${props => (props.hmargin || 0)};
+    margin-right: ${props => (props.hmargin || 0)};
 `;
 
 export const GradientView = styled(LinearGradient)`
@@ -71,8 +75,8 @@ export const Line = styled.View`
     background-color: ${props => (props.bg ? props.bg : '#999999')};
     height: ${props => (props.height ? props.height : 1.5)};
     width: ${props => (props.width ? props.width : '40%')};
-    margin-top: 10;
-    margin-bottom: 10;
+    margin-top: ${props => (props.vmargin ? props.vmargin : 10)};
+    margin-bottom: ${props => (props.vmargin ? props.vmargin : 10)};
     border-width: ${props => (props.connector ? 1 : 0)};
     border-top-color: ${props => (props.border || '#999999')};
     border-bottom-color: ${props => (props.border || '#999999')};
@@ -141,7 +145,8 @@ export const StyledButton = styled.TouchableOpacity`
 `;
 
 export const LogoImg = styled.Image`
-    height: 50;
+    background-color: ${props => (props.bg ? props.bg : 'transparent')};
+    height: ${props => (props.height ? props.height : 50)};
     width: ${props => (props.width ? props.width : 'auto')};
     /* padding-top: 20; */
     margin-bottom: ${props => (props.bmargin ? props.bmargin : 0)};
@@ -164,4 +169,8 @@ export const Circle = styled.View`
     height: ${props => (props.height || '15px')};
     justify-content: ${props => props.justify || 'center'};
     align-items: ${props => props.align || 'center'};
+`;
+
+export const StyledScrollView = styled(ScrollView)`
+    background: ${props => (props.bg || '#ffffff')};
 `;

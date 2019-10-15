@@ -4,6 +4,6 @@ import { MainView, BlockView } from '../../Components';
 
 const Profile = () => (
     <MainView>
-        <BlockView 
+        <BlockView/>
     </MainView>
 )

@@ -15,11 +15,11 @@ export default class Categories extends Component {
     return (
       <ScrollView>
         <MainView>
-          <CategoryItem img={acc} title="Accessories" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Accessories' })} detail="11 products" />
-          <CategoryItem img={cam} title="Camera & Photography" detail="5 products" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Camera & Photography' })} />
-          <CategoryItem img={com} title="Computer Components" detail="8 products" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Computer Components' })} />
-          <CategoryItem img={gad} title="Gadgets" detail="14 products" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Gadgets' })} />
-          <CategoryItem img={acc} title="Camera & Photography" detail="5 products" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Accessories' })} />
+          <CategoryItem img={acc} title="Accessories" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Accessories', categoryId: 1 })} detail="11 products" />
+          <CategoryItem img={cam} title="Camera & Photography" detail="5 products" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Camera & Photography', categoryId: 2 })} />
+          <CategoryItem img={com} title="Computer Components" detail="8 products" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Computer Components', categoryId: 3 })} />
+          <CategoryItem img={gad} title="Gadgets" detail="14 products" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Gadgets', categoryId: 4 })} />
+          <CategoryItem img={acc} title="Camera & Photography" detail="5 products" navigate={() => navigation.navigate('ProductsList', { pageTitle: 'Accessories', categoryId: 5 })} />
         </MainView>
       </ScrollView>
     );

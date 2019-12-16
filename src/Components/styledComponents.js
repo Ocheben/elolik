@@ -110,6 +110,7 @@ export const StyledText = styled.Text`
     color: ${props => (props.color ? props.color : '#ffffff')};
     width: ${props => (props.width ? props.width : 'auto')};
     text-align: ${props => (props.textAlign ? props.textAlign : 'left')};
+    text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')}
 `;
 export const InputLabel = styled.Text`
     /* font-size: ${props => props.size}; */

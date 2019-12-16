@@ -8,9 +8,10 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 import { Root } from 'native-base';
 import { createRootNavigator } from './src/router';
-import { isSignedIn } from './_services'
+import { isSignedIn } from './_services';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -31,13 +32,16 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.checkSignIn()
+    SplashScreen.hide();
+    this.checkSignIn();
   }
+
   checkSignIn = () => {
     isSignedIn()
       .then(res => this.setState({ signedIn: res, checkedSignIn: true }))
-      .catch(err => alert('An error occurred'));
+      .catch(err => alert('An error occurred', err));
   }
+
   render() {
     const { checkedSignIn, signedIn } = this.state;
     if (!checkedSignIn) {

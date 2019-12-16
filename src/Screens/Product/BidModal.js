@@ -13,6 +13,7 @@ const { height, width } = Dimensions.get('window');
 const BidModal = (props) => {
   const [bid, setBid] = useState(0);
   const [loading, setLoading] = useState(false);
+  console.log(parseInt(props.minBid));
   const handleSubmit = async () => {
     const { baseUrl, postBid: { method, path } } = APIS;
     const submitUrl = `${baseUrl}${path}`;
@@ -20,6 +21,14 @@ const BidModal = (props) => {
       product: props.productId,
       amount: parseInt(bid, 10),
     };
+    if (parseInt(props.minBid, 10) > parseInt(bid, 10)) {
+      Toast.show({
+        ...toastDefault,
+        text: 'Bid is below minimum bid',
+        type: 'danger'
+      });
+      return;
+    }
     setLoading(true);
     const token = await AsyncStorage.getItem(TOKEN);
     console.log(token);

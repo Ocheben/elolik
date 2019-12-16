@@ -49,7 +49,7 @@ const Product = (props) => {
   const { navigation } = props;
   const productInfo = navigation.getParam('productInfo');
   const {
-    rating, title, cost, description, id
+    rating, title, cost, description, id, minimum_bid
   } = productInfo.meta;
 
   const addToCart = async () => {
@@ -72,7 +72,7 @@ const Product = (props) => {
     } else if (response.error) {
       Toast.show({
         ...toastDefault,
-        text: response.message,
+        text: response.error,
         type: 'danger',
       });
     } else {
@@ -89,7 +89,10 @@ const Product = (props) => {
           <BlockView vpadding={10} align="center" justify="space-between" height={height * 0.2}>
             <BlockView flex={1} align="center" justify="space-between">
               <StyledText size="22px" color="#000000" fontWeight="900">{ title }</StyledText>
-              <StyledText size="22px" color="#000000" fontWeight="400">{ cost }</StyledText>
+              <StyledText size="22px" color="#000000" fontWeight="400">
+                N
+                {Number(cost).toLocaleString()}
+              </StyledText>
             </BlockView>
             <BlockView flex={1} flexD="row" justify="center" align="center">
               <Rating size={25} rating={rating} />
@@ -137,7 +140,7 @@ const Product = (props) => {
             visible={openModal}
           >
             <MainView bg="transparent" vpadding={0} justify="center">
-              <BidModal close={e => toggleModal(e)} productId={id} productName={title} />
+              <BidModal close={e => toggleModal(e)} productId={id} productName={title} minBid={minimum_bid} />
             </MainView>
           </Modal>
         </MainView>

@@ -4,6 +4,7 @@ import { Tabs, Tab, TabHeading } from 'native-base';
 import { StyledText, StyledButton, BlockView } from '../../Components/styledComponents';
 import { TabIcon, CartIcon } from '../../Components';
 import CartItems from './CartItems';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 const { height, width } = Dimensions.get('window');
@@ -24,19 +25,50 @@ const Cart = () => {
           </StyledButton>
         </View>
       </Tab>
-      <Tab heading={<TabHeading style={{ backgroundColor: '#ffffff', justifyContent: 'flex-start' }}><TabIcon title="Delivery" active={currentPage === 1} completed={currentPage > 1} /></TabHeading>}>
-        <StyledText color="#000000">This is Tab {currentPage}</StyledText>
-        <StyledButton bg="red" onPress={() => setcurrentPage(2)}><StyledText>Next</StyledText></StyledButton>
-        <StyledButton bg="red" onPress={() => setcurrentPage(0)}><StyledText>Back</StyledText></StyledButton>
+      <Tab heading={<TabHeading style={{ backgroundColor: '#ffffff', justifyContent: 'flex-end' }}><TabIcon title="Delivery" active={currentPage === 1} completed={currentPage > 1} /></TabHeading>}>
+        <ScrollView />
+        <View style={{
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+          bottom: 0
+        }}
+        >
+          <StyledButton width="50%" height={height / 15} bg="#abd136" onPress={() => setcurrentPage(0)}>
+            <StyledText size={width / 20} fontWeight="500">Previous Step</StyledText>
+          </StyledButton>
+          <StyledButton width="50%" height={height / 15} bg="#abd136" onPress={() => setcurrentPage(2)}>
+            <StyledText size={width / 20} fontWeight="500">Next Step</StyledText>
+          </StyledButton>
+        </View>
       </Tab>
       <Tab heading={<TabHeading style={{ backgroundColor: '#ffffff', justifyContent: 'flex-start' }}><TabIcon title="Payment" active={currentPage === 2} completed={currentPage > 2} /></TabHeading>}>
-        <StyledText color="#000000">This is Tab {currentPage}</StyledText>
-        <StyledButton bg="red" onPress={() => setcurrentPage(3)}><StyledText>Next</StyledText></StyledButton>
-        <StyledButton bg="red" onPress={() => setcurrentPage(1)}><StyledText>Back</StyledText></StyledButton>
+        <ScrollView />
+        <View style={{
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+          bottom: 0
+        }}
+        >
+          <StyledButton width="50%" height={height / 15} bg="#abd136" onPress={() => setcurrentPage(1)}>
+            <StyledText size={width / 20} fontWeight="500">Previous Step</StyledText>
+          </StyledButton>
+          <StyledButton width="50%" height={height / 15} bg="#abd136" onPress={() => setcurrentPage(3)}>
+            <StyledText size={width / 20} fontWeight="500">Next Step</StyledText>
+          </StyledButton>
+        </View>
       </Tab>
       <Tab heading={<TabHeading style={{ backgroundColor: '#ffffff', justifyContent: 'flex-start' }}><TabIcon title="Order" active={currentPage === 3} last /></TabHeading>}>
-        <StyledText color="#000000">This is Tab {currentPage}</StyledText>
-        <StyledButton bg="red" onPress={() => setcurrentPage(2)}><StyledText>Back</StyledText></StyledButton>
+        <ScrollView />
+        <View style={{
+          flexDirection: 'row',
+          justifyContent: 'flex-start',
+          bottom: 0
+        }}
+        >
+          <StyledButton width="50%" height={height / 15} bg="#abd136" onPress={() => setcurrentPage(2)}>
+            <StyledText size={width / 20} fontWeight="500">Previous Step</StyledText>
+          </StyledButton>
+        </View>
       </Tab>
     </Tabs>
   );

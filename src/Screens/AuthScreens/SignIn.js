@@ -45,29 +45,30 @@ const SignIn = (props) => {
   const handleSubmit = async () => {
     const { baseUrl, login: { method, url } } = APIS;
     const submitUrl = `${baseUrl}${url}`;
+    navigation.navigate('SignedIn');
 
-    setLoading(true);
-    const response = await request(method, submitUrl, formInputs);
-    if (response.access_token) {
-      Toast.show({
-        ...toastDefault,
-        text: 'You have successfully logged in',
-        type: 'success',
-      });
-      setLoading(false);
-      await signIn(JSON.stringify(response));
-      console.log(response);
-    } else if (response.error) {
-      Toast.show({
-        ...toastDefault,
-        text: response.error,
-        type: 'danger',
-      });
-      setLoading(false);
-    } else {
-      console.log(response);
-    }
-    console.log(response);
+    // setLoading(true);
+    // const response = await request(method, submitUrl, formInputs);
+    // if (response.access_token) {
+    //   Toast.show({
+    //     ...toastDefault,
+    //     text: 'You have successfully logged in',
+    //     type: 'success',
+    //   });
+    //   setLoading(false);
+    //   await signIn(JSON.stringify(response));
+    //   console.log(response);
+    // } else if (response.error) {
+    //   Toast.show({
+    //     ...toastDefault,
+    //     text: response.error,
+    //     type: 'danger',
+    //   });
+    //   setLoading(false);
+    // } else {
+    //   console.log(response);
+    // }
+    // console.log(response);
   };
 
   return (

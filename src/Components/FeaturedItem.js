@@ -40,11 +40,16 @@ export const ItemCard = (props) => {
         rmargin={rmargin ? 10 : 0}
       >
         <Image source={img} resizeMode="cover" style={{ width: '100%', height: '70%' }} />
-        <BlockView hpadding={8} vpadding={8} justify="space-between">
-          <StyledText color="#333333" size="17px">{desc}</StyledText>
+        <BlockView hpadding={8} vpadding={8} justify="space-between" height="30%">
+          <View style={{ height: '50%', overflow: 'hidden' }}>
+            <StyledText numberOfLines={1} color="#333333" size={height / 50}>{desc}</StyledText>
+          </View>
           <View>
-            <StyledText color="#333333" size="15px" fontWeight="300">{newPrice && newPrice}</StyledText>
-            <StyledText color="#333333" size="13px" fontWeight="300" style={{ textDecorationLine: 'line-through' }}>{oldPrice}</StyledText>
+            <StyledText color="#333333" size={height / 55} fontWeight="300">
+              N
+              {newPrice && Number(newPrice).toLocaleString()}
+            </StyledText>
+            <StyledText color="#333333" size={height / 60} fontWeight="300" style={{ textDecorationLine: 'line-through' }}>{oldPrice}</StyledText>
           </View>
         </BlockView>
       </Card>
